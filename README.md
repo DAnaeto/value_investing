@@ -6,7 +6,7 @@ _This project was made to assist in the act of value investing_
 
 - What the business does, how the business makes money, etc.
 
-- Competitors in the same sector (future addition)
+- Competitive advantages for the stock compared to others in the same sector, aka moat (future addition)
 
 - The management team behind the stock and their track record (underpromise & overdeliver or overpromise & underdeliver)
 
@@ -18,11 +18,11 @@ _This project was made to assist in the act of value investing_
 
 - Enter margin of safety for that intrinsic value
 
-Cron is needed by:
+## Docker Container
 
-- sudo dnf install -y cronie
-- sudo apt install -y cronie
+1. Install docker with [this guide](https://docs.docker.com/engine/install/fedora/ "the following guide")
 
-Run:
+2. Run the following lines of code in the terminal
 
-- whenever --update-crontab
+- `sudo docker build -t value_investing .`
+- `sudo docker run -it -p 3000:3000 value_investing`
