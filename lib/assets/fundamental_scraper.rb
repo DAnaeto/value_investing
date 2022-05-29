@@ -101,4 +101,17 @@ module Scrape
       return revenue
     end
   end
+
+  module Price
+    def parse_price(ticker)
+      url = "https://stockanalysis.com/stocks/#{ticker}/"
+      parsed_data = parse_html_data(url)
+      market_price = parsed_data.xpath('/html/body/div/div[1]/div/div[2]/main/div/div[1]/div[2]/div[1]/div[1]')
+      after_market_price = parsed_data.xpath('/html/body/div/div[1]/div/div[2]/main/div/div[1]/div[2]/div[2]/div[1]')
+      if after_market_price.inner_html.empty?
+        return market_price.inner_html
+      end
+      return after_market_price.inner_html
+    end
+  end
 end
