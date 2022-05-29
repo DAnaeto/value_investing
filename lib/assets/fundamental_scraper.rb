@@ -17,7 +17,7 @@ module Scrape
   module CashFlow
     def parse_cash_flows(ticker)
       url = "https://stockanalysis.com/stocks/#{ticker}/financials/cash-flow-statement/"
-      parsed_html_data = parse_html_data(url)
+      return parse_html_data(url)
     end
 
     def calculate_equity(operating_cash_flow, capital_expenditure)
@@ -67,7 +67,7 @@ module Scrape
   module BalanceSheet
     def parse_balance_sheet(ticker)
       url = "https://stockanalysis.com/stocks/#{ticker}/financials/balance-sheet/"
-      parsed_html_data = parse_html_data(url)
+      return parse_html_data(url)
     end
 
     def balance_sheet_information(ticker)
@@ -86,7 +86,7 @@ module Scrape
   module Income
     def parse_income_statement(ticker)
       url = "https://stockanalysis.com/stocks/#{ticker}/financials/"
-      parsed_html_data = parse_html_data(url)
+      return parse_html_data(url)
     end
 
     def income_statement_information(ticker)
